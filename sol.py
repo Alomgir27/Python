@@ -18,56 +18,60 @@ df = pd.read_csv('mtcars.csv')
 # d['count'] = d['count'].apply(lambda x: '{:,}'.format(x))
 # d = d[['column', 'count', 'percent']]
 
-print(len(df))
-d = df.dropna(axis=0, how='any')
+# print(df.head())
+# print(len(df))
+df = df.dropna(how='any', axis=0)
 df = df.interpolate(method='linear', axis=0, limit_direction='forward').fillna(method='bfill', axis=0).fillna(method='ffill', axis=0)
-print(len(df) - len(d))
-print(df.isna().sum())
-print(df.describe())
-
-df = df.dropna()
-print(len(df))
 print(df)
+# print(df)
+# df = df.interpolate(method='linear', axis=0, limit_direction='forward').fillna(method='bfill', axis=0).fillna(method='ffill', axis=0)
+# print(len(df) - len(d))
+# print(df.isna().sum())
+# print(df.describe())
+
+# df = df.dropna()
+# print(len(df))
+# print(df)
     
-df = df.dropna(axis=0, how='any')
-df = df.interpolate(method='linear', axis=0, limit_direction='forward').fillna(method='bfill', axis=0).fillna(method='ffill', axis=0)
-print(df.isna().sum())
-print(df.describe())
+# df = df.dropna(axis=0, how='any')
+# df = df.interpolate(method='linear', axis=0, limit_direction='forward').fillna(method='bfill', axis=0).fillna(method='ffill', axis=0)
+# print(df.isna().sum())
+# print(df.describe())
 
 
 
 
 
-# print(d, df)
+# # print(d, df)
 
 
 
-# for i in range(len(df.columns)):
-#     df = df.rename(columns={'Unnamed: ' + str(i): df.columns[i]})
+# # for i in range(len(df.columns)):
+# #     df = df.rename(columns={'Unnamed: ' + str(i): df.columns[i]})
 
-# x = df['mpg'].values
-# y = df['wt'].values
+# # x = df['mpg'].values
+# # y = df['wt'].values
 
-# print(df.head())
+# # print(df.head())
 
-# plt.figure(figsize=(10, 6))
-# plt.scatter(x, y, c='red', alpha=0.5, s=100)
-# plt.xlabel('mpg')
-# plt.ylabel('wt')
-# plt.title('Scatter plot of mpg vs wt')
+# # plt.figure(figsize=(10, 6))
+# # plt.scatter(x, y, c='red', alpha=0.5, s=100)
+# # plt.xlabel('mpg')
+# # plt.ylabel('wt')
+# # plt.title('Scatter plot of mpg vs wt')
 
-# plt.show()
+# # plt.show()
 
-# plt.figure(figsize=(10, 6))
-# plt.scatter(df['mpg'], df['wt'], c='red', alpha=0.5, s=100)
-# plt.xlabel('mpg')
-# plt.ylabel('wt')
+# # plt.figure(figsize=(10, 6))
+# # plt.scatter(df['mpg'], df['wt'], c='red', alpha=0.5, s=100)
+# # plt.xlabel('mpg')
+# # plt.ylabel('wt')
 
-# plt.show()
+# # plt.show()
 
 
 
-# print(df.head())
+# # print(df.head())
 
 
 
